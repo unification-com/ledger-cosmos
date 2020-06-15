@@ -16,33 +16,32 @@
 
 #include "app_mode.h"
 
+typedef struct {
+    unsigned int expert : 1;
+} app_mode_t;
+
 #if defined(TARGET_NANOS) || defined(TARGET_NANOX)
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 
-//NV_CONST app_mode_t N_appmode NV_ALIGN;
-//#define N_APPMODE_PTR  ((NV_VOL app_mode_t *)PIC(&N_appmode))
-app_mode_t app_mode;
+NV_CONST app_mode_t N_appmode NV_ALIGN;
+#define N_APPMODE_PTR  ((NV_VOL app_mode_t *)PIC(&N_appmode))
 
-void app_mode_reset(){
-    app_mode.expert = 0;
+// app_mode_t app_mode;
+
+void app_mode_reset() {
+//    app_mode.expert = 0;
 }
 
 bool app_mode_expert() {
-//    TODO: read from NVRAM
-//    app_mode_t *p = N_APPMODE_PTR;
-//    uint8_t expert = p->expert;
-//    return expert;
-//    app_mode_t* p =(NV_VOL app_mode_t *)PIC(&N_appmode_impl);
-//    return p->expert;
-    return app_mode.expert;
+    return N_APPMODE_PTR->expert != 0;
 }
 
 void app_mode_set_expert(uint8_t val) {
-//    TODO: write to NVRAM
-    app_mode.expert = val;
+//    app_mode.expert = val;
+    //    TODO: write to NVRAM
 }
 
 #else
