@@ -10,7 +10,7 @@ const APP_PATH = Resolve("../app/bin/app.elf");
 const APP_SEED = "equip will roof matter pink blind book anxiety banner elbow sun young"
 const sim_options = {
     logging: true,
-    start_delay: 4000,
+    start_delay: 5000,
     custom: `-s "${APP_SEED}"`
     , X11: true
 };
@@ -19,12 +19,12 @@ jest.setTimeout(30000)
 
 const example_tx_str_basic = {
     "account_number": "108",
-    "chain_id": "cosmoshub-3",
+    "chain_id": "FUND-Mainchain-DevNet",
     "fee": {
         "amount": [
             {
                 "amount": "600",
-                "denom": "uatom"
+                "denom": "nund"
             }
         ],
         "gas": "200000"
@@ -34,15 +34,15 @@ const example_tx_str_basic = {
         {
             "type": "cosmos-sdk/MsgWithdrawDelegationReward",
             "value": {
-                "delegator_address": "cosmos1w34k53py5v5xyluazqpq65agyajavep2rflq6h",
-                "validator_address": "cosmosvaloper1kn3wugetjuy4zetlq6wadchfhvu3x740ae6z6x"
+                "delegator_address": "und1nkcrcf4ymjq4j9rdmuhturgn3c23lr90kxxwkj",
+                "validator_address": "undvaloper1eq239sgefyzm4crl85nfyvt7kw83vrna6lrjet"
             }
         },
         {
             "type": "cosmos-sdk/MsgWithdrawDelegationReward",
             "value": {
-                "delegator_address": "cosmos1w34k53py5v5xyluazqpq65agyajavep2rflq6h",
-                "validator_address": "cosmosvaloper1sjllsnramtg3ewxqwwrwjxfgc4n4ef9u2lcnj0"
+                "delegator_address": "und1nkcrcf4ymjq4j9rdmuhturgn3c23lr90kxxwkj",
+                "validator_address": "undvaloper13lyhcfekkdczaugqaexya60ckn23l5wazf07px"
             }
         }
     ],
@@ -51,12 +51,12 @@ const example_tx_str_basic = {
 
 const example_tx_str_expert = {
     "account_number": "108",
-    "chain_id": "cosmoshub-2",
+    "chain_id": "FUND-Mainchain-DevNet",
     "fee": {
         "amount": [
             {
                 "amount": "600",
-                "denom": "uatom"
+                "denom": "nund"
             }
         ],
         "gas": "200000"
@@ -66,15 +66,15 @@ const example_tx_str_expert = {
         {
             "type": "cosmos-sdk/MsgWithdrawDelegationReward",
             "value": {
-                "delegator_address": "cosmos1kky4yzth6gdrm8ga5zlfwhav33yr7hl87jycah",
-                "validator_address": "cosmosvaloper1kn3wugetjuy4zetlq6wadchfhvu3x740ae6z6x"
+                "delegator_address": "und1nkcrcf4ymjq4j9rdmuhturgn3c23lr90kxxwkj",
+                "validator_address": "undvaloper1eq239sgefyzm4crl85nfyvt7kw83vrna6lrjet"
             }
         },
         {
             "type": "cosmos-sdk/MsgWithdrawDelegationReward",
             "value": {
-                "delegator_address": "cosmos1kky4yzth6gdrm8ga5zlfwhav33yr7hl87jycah",
-                "validator_address": "cosmosvaloper1sjllsnramtg3ewxqwwrwjxfgc4n4ef9u2lcnj0"
+                "delegator_address": "und1nkcrcf4ymjq4j9rdmuhturgn3c23lr90kxxwkj",
+                "validator_address": "undvaloper13lyhcfekkdczaugqaexya60ckn23l5wazf07px"
             }
         }
     ],
@@ -83,12 +83,12 @@ const example_tx_str_expert = {
 
 const example_tx_str_combined = {
     "account_number": "108",
-    "chain_id": "cosmoshub-3",
+    "chain_id": "FUND-Mainchain-DevNet",
     "fee": {
         "amount": [
             {
                 "amount": "600",
-                "denom": "uatom"
+                "denom": "nund"
             }
         ],
         "gas": "200000"
@@ -98,8 +98,8 @@ const example_tx_str_combined = {
         {
             "type": "cosmos-sdk/MsgWithdrawDelegationReward",
             "value": {
-                "delegator_address": "cosmos1w34k53py5v5xyluazqpq65agyajavep2rflq6h",
-                "validator_address": "cosmosvaloper1648ynlpdw7fqa2axt0w2yp3fk542junl7rsvq6"
+                "delegator_address": "und1nkcrcf4ymjq4j9rdmuhturgn3c23lr90kxxwkj",
+                "validator_address": "undvaloper1eq239sgefyzm4crl85nfyvt7kw83vrna6lrjet"
             }
         },
         {
@@ -107,14 +107,45 @@ const example_tx_str_combined = {
             "value": {
                 "amount": {
                     "amount": "20139397",
-                    "denom": "uatom"
+                    "denom": "nund"
                 },
-                "delegator_address": "cosmos1w34k53py5v5xyluazqpq65agyajavep2rflq6h",
-                "validator_address": "cosmosvaloper1648ynlpdw7fqa2axt0w2yp3fk542junl7rsvq6",
+                "delegator_address": "und1nkcrcf4ymjq4j9rdmuhturgn3c23lr90kxxwkj",
+                "validator_address": "undvaloper13lyhcfekkdczaugqaexya60ckn23l5wazf07px",
             }
         }
     ],
     "sequence": "106"
+};
+
+const example_tx_str_send = {
+    "account_number": "24",
+    "chain_id": "FUND-Mainchain-DevNet",
+    "fee": {
+        "amount": [
+            {
+                "amount": "50000",
+                "denom": "nund"
+            }
+        ],
+        "gas": "200000"
+    },
+    "memo": "",
+    "msgs": [
+        {
+            "type": "cosmos-sdk/MsgSend",
+            "value": {
+                "amount": [
+                    {
+                        "amount": "1000000000",
+                        "denom": "nund"
+                    }
+                ],
+                "from_address": "und1k4jy3y74fy007nf3w6atjgywclp7f204v0qekx",
+                "to_address": "und1nkcrcf4ymjq4j9rdmuhturgn3c23lr90kxxwkj"
+            }
+        }
+    ],
+    "sequence": "99"
 };
 
 describe('Basic checks', function () {
@@ -188,8 +219,8 @@ describe('Basic checks', function () {
             await sim.start(sim_options);
             const app = new CosmosApp(sim.getTransport());
             // Derivation path. First 3 items are automatically hardened!
-            const path = [44, 118, 5, 0, 3];
-            const resp = await app.getAddressAndPubKey(path, "cosmos");
+            const path = [44, 5555, 5, 0, 3];
+            const resp = await app.getAddressAndPubKey(path, "und");
 
             console.log(resp);
 
@@ -199,7 +230,7 @@ describe('Basic checks', function () {
             expect(resp).toHaveProperty("bech32_address");
             expect(resp).toHaveProperty("compressed_pk");
 
-            expect(resp.bech32_address).toEqual("cosmos1wkd9tfm5pqvhhaxq77wv9tvjcsazuaykwsld65");
+            expect(resp.bech32_address).toEqual("und1qldu78sh9gl508f7j8cqrenrsrye5d6avqpdjx");
             expect(resp.compressed_pk.length).toEqual(33);
         } finally {
             await sim.close();
@@ -225,11 +256,11 @@ describe('Basic checks', function () {
             const app = new CosmosApp(sim.getTransport());
 
             // Derivation path. First 3 items are automatically hardened!
-            const path = [44, 118, 5, 0, 3];
-            const respRequest = app.showAddressAndPubKey(path, "cosmos");
+            const path = [44, 5555, 5, 0, 3];
+            const respRequest = app.showAddressAndPubKey(path, "und");
 
             // We need to wait until the app responds to the APDU
-            await Zemu.sleep(2000);
+            await Zemu.sleep(3000);
 
             // Now navigate the address / path
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
@@ -249,7 +280,7 @@ describe('Basic checks', function () {
             expect(resp).toHaveProperty("bech32_address");
             expect(resp).toHaveProperty("compressed_pk");
 
-            expect(resp.bech32_address).toEqual("cosmos1wkd9tfm5pqvhhaxq77wv9tvjcsazuaykwsld65");
+            expect(resp.bech32_address).toEqual("und1qldu78sh9gl508f7j8cqrenrsrye5d6avqpdjx");
             expect(resp.compressed_pk.length).toEqual(33);
         } finally {
             await sim.close();
@@ -263,8 +294,8 @@ describe('Basic checks', function () {
             const app = new CosmosApp(sim.getTransport());
 
             // Derivation path. First 3 items are automatically hardened!
-            const path = [44, 118, 2147483647, 0, 4294967295];
-            const resp = await app.showAddressAndPubKey(path, "cosmos");
+            const path = [44, 5555, 2147483647, 0, 4294967295];
+            const resp = await app.showAddressAndPubKey(path, "und");
             console.log(resp);
 
             expect(resp.return_code).toEqual(0x6985);
@@ -289,11 +320,11 @@ describe('Basic checks', function () {
             await sim.clickBoth(`${snapshotPrefixTmp}${snapshotCount++}.png`);
 
             // Derivation path. First 3 items are automatically hardened!
-            const path = [44, 118, 2147483647, 0, 4294967295];
-            const respRequest = app.showAddressAndPubKey(path, "cosmos");
+            const path = [44, 5555, 2147483647, 0, 4294967295];
+            const respRequest = app.showAddressAndPubKey(path, "und");
 
             // We need to wait until the app responds to the APDU
-            await Zemu.sleep(2000);
+            await Zemu.sleep(3000);
 
             // Now navigate the address / path
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
@@ -316,8 +347,64 @@ describe('Basic checks', function () {
             expect(resp).toHaveProperty("bech32_address");
             expect(resp).toHaveProperty("compressed_pk");
 
-            expect(resp.bech32_address).toEqual("cosmos1ex7gkwwmq4vcgdwcalaq3t20pgwr37u6ntkqzh");
+            expect(resp.bech32_address).toEqual("und16sg60tvd0hcfmzyf660cnhaty4edmg5yyna82z");
             expect(resp.compressed_pk.length).toEqual(33);
+        } finally {
+            await sim.close();
+        }
+    });
+
+    it('sign basic - send', async function () {
+        const snapshotPrefixGolden = "snapshots/sign-basic-send/";
+        const snapshotPrefixTmp = "snapshots-tmp/sign-basic-send/";
+        let snapshotCount = 0;
+
+        const sim = new Zemu(APP_PATH);
+        try {
+            await sim.start(sim_options);
+            const app = new CosmosApp(sim.getTransport());
+
+            const path = [44, 5555, 5, 0, 21];
+            let tx = JSON.stringify(example_tx_str_send);
+
+            // get address / publickey
+            const respPk = await app.getAddressAndPubKey(path, "und");
+            expect(respPk.return_code).toEqual(0x9000);
+            expect(respPk.error_message).toEqual("No errors");
+            console.log(respPk)
+
+            // do not wait here..
+            const signatureRequest = app.sign(path, tx);
+
+            await Zemu.sleep(3000);
+
+            // Reference window
+            await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
+            for (let i = 0; i < 11; i++) {
+                await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
+            }
+            await sim.clickBoth();
+
+            let resp = await signatureRequest;
+            console.log(resp);
+
+            compareSnapshots(snapshotPrefixTmp, snapshotPrefixGolden, snapshotCount);
+
+            expect(resp.return_code).toEqual(0x9000);
+            expect(resp.error_message).toEqual("No errors");
+
+            // Now verify the signature
+            const hash = crypto.createHash("sha256");
+            const msgHash = Uint8Array.from(hash.update(tx).digest());
+
+            const signatureDER = resp.signature;
+            const signature = secp256k1.signatureImport(Uint8Array.from(signatureDER));
+
+            const pk = Uint8Array.from(respPk.compressed_pk)
+
+            const signatureOk = secp256k1.ecdsaVerify(signature, msgHash, pk);
+            expect(signatureOk).toEqual(true);
+
         } finally {
             await sim.close();
         }
@@ -333,11 +420,11 @@ describe('Basic checks', function () {
             await sim.start(sim_options);
             const app = new CosmosApp(sim.getTransport());
 
-            const path = [44, 118, 0, 0, 0];
+            const path = [44, 5555, 0, 0, 0];
             let tx = JSON.stringify(example_tx_str_basic);
 
             // get address / publickey
-            const respPk = await app.getAddressAndPubKey(path, "cosmos");
+            const respPk = await app.getAddressAndPubKey(path, "und");
             expect(respPk.return_code).toEqual(0x9000);
             expect(respPk.error_message).toEqual("No errors");
             console.log(respPk)
@@ -345,11 +432,11 @@ describe('Basic checks', function () {
             // do not wait here..
             const signatureRequest = app.sign(path, tx);
 
-            await Zemu.sleep(2000);
+            await Zemu.sleep(3000);
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 14; i++) {
                 await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
             }
             await sim.clickBoth();
@@ -389,11 +476,11 @@ describe('Basic checks', function () {
             await sim.start(sim_options);
             const app = new CosmosApp(sim.getTransport());
 
-            const path = [44, 118, 0, 0, 0];
+            const path = [44, 5555, 0, 0, 0];
             let tx = JSON.stringify(example_tx_str_combined);
 
             // get address / publickey
-            const respPk = await app.getAddressAndPubKey(path, "cosmos");
+            const respPk = await app.getAddressAndPubKey(path, "und");
             expect(respPk.return_code).toEqual(0x9000);
             expect(respPk.error_message).toEqual("No errors");
             console.log(respPk)
@@ -405,7 +492,7 @@ describe('Basic checks', function () {
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
-            for (let i = 0; i < 8; i++) {
+            for (let i = 0; i < 16; i++) {
                 await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
             }
             await sim.clickBoth();
@@ -445,11 +532,11 @@ describe('Basic checks', function () {
             await sim.start(sim_options);
             const app = new CosmosApp(sim.getTransport());
 
-            const path = [44, 118, 0, 0, 0];
+            const path = [44, 5555, 0, 0, 0];
             let tx = JSON.stringify(example_tx_str_basic);
 
             // get address / publickey
-            const respRequest = app.showAddressAndPubKey(path, "cosmos");
+            const respRequest = app.showAddressAndPubKey(path, "und");
 
             // We need to wait until the app responds to the APDU
             await Zemu.sleep(3000);
@@ -475,7 +562,7 @@ describe('Basic checks', function () {
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 14; i++) {
                 await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
             }
             await sim.clickBoth();
@@ -515,11 +602,11 @@ describe('Basic checks', function () {
             await sim.start(sim_options);
             const app = new CosmosApp(sim.getTransport());
 
-            const path = [44, 118, 0, 0, 0];
+            const path = [44, 5555, 0, 0, 0];
             let tx = JSON.stringify(example_tx_str_expert);
 
             // get address / publickey
-            const respPk = await app.getAddressAndPubKey(path, "cosmos");
+            const respPk = await app.getAddressAndPubKey(path, "und");
             expect(respPk.return_code).toEqual(0x9000);
             expect(respPk.error_message).toEqual("No errors");
             console.log(respPk)
