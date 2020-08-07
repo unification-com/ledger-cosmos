@@ -19,7 +19,7 @@ jest.setTimeout(30000)
 
 const example_tx_str_basic = {
     "account_number": "108",
-    "chain_id": "FUND-Mainchain-DevNet",
+    "chain_id": "FUND-Mainchain-MainNet-v1",
     "fee": {
         "amount": [
             {
@@ -83,7 +83,7 @@ const example_tx_str_expert = {
 
 const example_tx_str_combined = {
     "account_number": "108",
-    "chain_id": "FUND-Mainchain-DevNet",
+    "chain_id": "FUND-Mainchain-MainNet-v1",
     "fee": {
         "amount": [
             {
@@ -119,7 +119,7 @@ const example_tx_str_combined = {
 
 const example_tx_str_send = {
     "account_number": "24",
-    "chain_id": "FUND-Mainchain-DevNet",
+    "chain_id": "FUND-Mainchain-MainNet-v1",
     "fee": {
         "amount": [
             {
@@ -380,7 +380,7 @@ describe('Basic checks', function () {
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
-            for (let i = 0; i < 11; i++) {
+            for (let i = 0; i < 7; i++) {
                 await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
             }
             await sim.clickBoth();
@@ -436,7 +436,7 @@ describe('Basic checks', function () {
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
-            for (let i = 0; i < 14; i++) {
+            for (let i = 0; i < 6; i++) {
                 await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
             }
             await sim.clickBoth();
@@ -492,7 +492,7 @@ describe('Basic checks', function () {
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
-            for (let i = 0; i < 16; i++) {
+            for (let i = 0; i < 8; i++) {
                 await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
             }
             await sim.clickBoth();
@@ -539,7 +539,7 @@ describe('Basic checks', function () {
             const respRequest = app.showAddressAndPubKey(path, "und");
 
             // We need to wait until the app responds to the APDU
-            await Zemu.sleep(3000);
+            await Zemu.sleep(4000);
 
             // Now navigate the address / path
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
@@ -558,11 +558,11 @@ describe('Basic checks', function () {
             // do not wait here..
             const signatureRequest = app.sign(path, tx);
 
-            await Zemu.sleep(3000);
+            await Zemu.sleep(4000);
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
-            for (let i = 0; i < 14; i++) {
+            for (let i = 0; i < 6; i++) {
                 await sim.clickRight(Resolve(`${snapshotPrefixTmp}${snapshotCount++}.png`));
             }
             await sim.clickBoth();
@@ -614,7 +614,7 @@ describe('Basic checks', function () {
             // do not wait here..
             const signatureRequest = app.sign(path, tx);
 
-            await Zemu.sleep(3000);
+            await Zemu.sleep(4000);
 
             // Reference window
             await sim.snapshot(`${snapshotPrefixTmp}${snapshotCount++}.png`);
