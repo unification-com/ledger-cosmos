@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CodeFactor](https://www.codefactor.io/repository/github/unification-com/ledger-unification/badge)](https://www.codefactor.io/repository/github/unification-com/ledger-unification)
 
-This project contains the Unification app for Ledger Nano S and X. It is a
+This project contains Unification's FUND app for Ledger Nano S and X. It is a
 fork of the official [Cosmos Ledger app](https://github.com/Zondax/ledger-cosmos),
 with minimal changes to accommodate FUND's chain ID, HD Wallet path and coin 
 denomination (see commits [8f86f0bd](https://github.com/unification-com/ledger-unification/commit/8f86f0bd)
