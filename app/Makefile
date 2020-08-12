@@ -25,7 +25,7 @@ MY_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 include $(BOLOS_SDK)/Makefile.defines
 
 # Main app configuration
-APPNAME = "Unification"
+APPNAME = "FUND"
 APPVERSION_M=2
 APPVERSION_N=16
 APPVERSION_P=1
